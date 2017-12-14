@@ -1,25 +1,17 @@
 import React, {Component} from 'react';
-import { getWeather } from '../actions';
+import SearchBar from './Search_bar';
 import {connect} from 'react-redux';
 
 
 class App extends Component {
 
-  componentDidMount() {
-    const {getWeather} = this.props;
-      getWeather('Krakow');
-  }
 
   render() {
-    console.log('data', this.props.data[0]);
-
-    if(!this.props.data[0]) {
-      return (
-        <div>Loading...</div>
-      )
-    }
+    console.log(this.props.data);
     return (
-      <div>{this.props.data[0].city.name}</div>
+      <div>
+        <SearchBar />
+      </div>
     )
   }
 
@@ -32,5 +24,4 @@ function mapStateToProps(state) {
     return {data}
 }
 
-
-export default connect(mapStateToProps, {getWeather})(App);
+export default connect(mapStateToProps, null)(App);
