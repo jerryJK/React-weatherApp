@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import SearchBar from './Search_bar';
 import {connect} from 'react-redux';
+import SearchBar from './Search_bar';
+import WeatherList from './Weather_list';
+
 
 
 class App extends Component {
@@ -9,8 +11,9 @@ class App extends Component {
   render() {
     console.log(this.props.data);
     return (
-      <div>
+      <div className="container">
         <SearchBar />
+        <WeatherList />
       </div>
     )
   }
